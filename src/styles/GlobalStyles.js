@@ -13,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
     --color-verde: #29DA45;
     --color-cinza:  #898989;
     --color-fundo:  #3C3C3C;
+    --color-fundo2:  #151515;
+
 }
 
 `

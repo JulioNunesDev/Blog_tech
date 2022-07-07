@@ -8,5 +8,10 @@ export default interface IProps {
    backGround?: string 
 }
 
+export default interface IHeader {
+    topPadding?: string;
+    rationPadding?: string;
+    backGround?: string 
+ }
 
 
