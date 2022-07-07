@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Scroll from "../../../contexts/ContextScroll";
 import useSearchProvider from "../../../contexts/ContextSearchDados";
 import Icons from '../Icons/IconsAssets'
 import SearchModalComponent from "./SearchModal/SearchModal";
@@ -8,22 +9,44 @@ import { Content, Ctx_Navegation } from "./styHeaderMain";
 interface IHeader {
 }
 const HeaderMain: React.FC<IHeader> = () =>{
+
+    
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+    
+    useEffect(()=>{
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    
+         
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+        
+    },[])
+    
+    
     const {setInputSearchDados} = useSearchProvider()
     const [openModal, setOpenModal]=useState(false)
-
+    
     function OpenModalSearch(){
         setInputSearchDados('')
         setOpenModal(!openModal)
-
     }
+    
+
+    
     return(
         <>
-        <Content >
+        <Content backGround={scrollPosition  !== 0  ? undefined : 'rgba(0,0,0,0.4)'}>
             <Ctx_Navegation>
                 
                 {openModal ? <SearchModalComponent OpenModalSearch={OpenModalSearch} /> : '' }
                 <div className="logo">
                     <li><Link to='/'>DynamicsTech</Link></li>
+                  
                 </div>
                 <div className="header-menu">
                     <ul>
