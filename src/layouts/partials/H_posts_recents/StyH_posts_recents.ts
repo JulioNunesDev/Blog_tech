@@ -1,38 +1,80 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+interface IProps {
+    test: string
+    posts: string
+    postsTwo: string
+}
+
+const animaImg = keyframes`
+from{
+background-position: center;
+background-color: blanchedalmond;
+background-size: cover;
+background-repeat: no-repeat;
+}
+to{
+
+}
+`
 
 export const Base_Posts_Recents = styled.section`
 width: 100%;
-height: 100%;
+height: auto;
 background-color: var(--color-fundo2);
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 0 20px;
+padding: 25px 20px;
 `
 
 export const Content_Posts_Recents = styled.section`
 width: 100%;
 max-width: 1400px;
-height: 100%;
+height: auto;
 display: flex;
 align-items: center;
 justify-content: space-around;
 padding: 15px 0px;
-background-color: #fff;
+
+a{
+    color: #fff;
+    text-decoration:none;
+    transition: all .2s ease-in-out; 
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: underline;
+        transition: all .2s ease-in-out;
+    }
+}
+
 
 
 
 
 .post_recents_main{
-background-color: blanchedalmond;
+background-image: url(${(props:IProps)=>props.test || 'teste'});
+background-position: center;
+
+background-size: 180%;
+background-repeat: no-repeat;
+
 width: 38rem;
 height: 28rem;
-background-color: var(--color-fundo);
+
 display: flex;
 align-items: flex-end;
 justify-content: space-between;
+overflow: hidden;
 
+&:hover{
+    transition: all .2s ease-in-out;
+    background-position: center;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-image: url(${(props:IProps)=>props.test || 'teste'});
+}
 
     .post_title{
         display: flex;
@@ -64,7 +106,7 @@ justify-content: space-between;
             p{
             
                 color: #fff;
-            font-size: 20px;
+            font-size: 16px;
             font-family: var(--font-sansation);
             font-weight: normal;
             
@@ -72,8 +114,9 @@ justify-content: space-between;
             img{
                 width: 35px;
                 height: 35px;
-                background-color: azure;
+                
                 border-radius: 50px;
+                object-fit:  cover;
             }
         }
 
@@ -89,7 +132,42 @@ justify-content: space-between;
     justify-content: space-between;
     align-items: center;
    
+   
+    .imgOne{
+        width: 100%;
+        height: 14rem;
+       background-size: 100%;
+       background-position: center;
+       background-image: url(${(props:IProps)=>props.posts || 'teste'});
+    
+
+        &:hover{
+            transition: all .2s ease-in-out;
+    background-position: center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-image: url(${(props:IProps)=>props.posts || 'teste'});
+        }
+    }
+
+    .imgTwo{
+        background-image: url(${(props:IProps)=>props.postsTwo || 'teste'});
+        width: 100%;
+        height: 14rem;
+        background-size: 100%;
+       background-position: center;
+       
+
+        &:hover{
+            transition: all .2s ease-in-out;
+    background-position: center;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-image: url(${(props:IProps)=>props.postsTwo || 'teste'});
+        }
+    }
     .post_title{
+        
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -98,6 +176,8 @@ justify-content: space-between;
         align-items: flex-start;
         text-align: left;
         justify-content: center;
+       
+
 
         h1{
             color: #fff;
@@ -137,9 +217,12 @@ justify-content: space-between;
     }         
 
     .posts{
+      
         width: 30rem;
         height: 12rem;  
         background-color: brown;
+
+        
     }
 
 }
@@ -147,7 +230,7 @@ justify-content: space-between;
     .post_recents_main{
     width: 30rem;
     height: 24rem;
-    background-color: blue;
+   
 }
 
     .posts_recents{
@@ -159,7 +242,7 @@ justify-content: space-between;
     .post_recents_main{
     width: 20rem;
     height: 24rem;
-    background-color: blue;
+    
 }
 
     .posts_recents{
@@ -171,7 +254,7 @@ justify-content: space-between;
     .post_recents_main{
     width: 16rem;
     height: 20rem;
-    background-color: blue;
+   
 }
 }
 
