@@ -5,6 +5,7 @@ export const Content = styled.header`
     position: sticky;
     top: 0;
     display: flex;
+    z-index: 10;
     width: 100%;
     height: 75px;
     justify-content: ${(props: IHeader) => props.position || undefined};
