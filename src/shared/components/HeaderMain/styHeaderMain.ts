@@ -31,7 +31,8 @@ justify-content: space-around;
             height: auto;
         a {
             font-size: 28px;
-            font-weight: 700;
+            font-weight: 500;
+            font-style: italic;
             }
         }
 
@@ -44,8 +45,9 @@ justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
             gap: 25px;
-            font-size: 22px;
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: 300;
+            
         }
         .icon{
             display: flex;
