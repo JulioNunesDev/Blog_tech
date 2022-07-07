@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useSearchProvider from "../../../contexts/ContextSearchDados";
 import Icons from '../Icons/IconsAssets'
 import SearchModalComponent from "./SearchModal/SearchModal";
 import { Content, Ctx_Navegation } from "./styHeaderMain";
@@ -7,10 +8,13 @@ import { Content, Ctx_Navegation } from "./styHeaderMain";
 interface IHeader {
 }
 const HeaderMain: React.FC<IHeader> = () =>{
+    const {setInputSearchDados} = useSearchProvider()
     const [openModal, setOpenModal]=useState(false)
 
     function OpenModalSearch(){
+        setInputSearchDados('')
         setOpenModal(!openModal)
+
     }
     return(
         <>
