@@ -2,6 +2,7 @@ import styled from "styled-components";
 import IHeader from '../interfaces/interfaces'
 
 export const Content = styled.header`
+    position: relative;
     display: flex;
     width: 100%;
     height: 75px;
@@ -9,6 +10,7 @@ export const Content = styled.header`
     background-color: var(--color-fundo2);
 `
 export const Ctx_Navegation= styled.nav`
+
 li, a{ 
     color:  #fff;
     text-decoration: none;
@@ -16,7 +18,7 @@ li, a{
     font-family:var(--font-sansation);
 }
   
-
+position: relative;
 width: 100%;
 height: 100%;
 display: flex;
@@ -45,6 +47,21 @@ justify-content: space-around;
             font-size: 22px;
             font-weight: 500;
         }
+        .icon{
+            display: flex;
+            align-items: center;
+            
+            gap: 5px;
+        }
+
+        .icon img {
+            width: 16px;
+            
+        }
+
+
+
+
         }
         .icons-sociais{
             width:33,33%;
