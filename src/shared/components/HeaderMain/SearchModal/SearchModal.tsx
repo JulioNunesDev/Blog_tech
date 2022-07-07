@@ -1,5 +1,16 @@
-import styled from "styled-components"
+import styled, {keyframes} from "styled-components"
 import useSearchProvider from "../../../../contexts/ContextSearchDados"
+
+const animacaoInput = keyframes`
+from{
+    opacity: 0;
+    transform: translateY(-15px);
+}
+to{
+    opacity: 1;
+    transform: translateY(0);
+}
+`
 
 const SearchModal = styled.div`
 width: 100%;
@@ -11,9 +22,10 @@ z-index:1;
 display: flex;
 justify-content: center;
 align-items: center;
-transition: all .2s ease-in-out .3s;
+
 
 .content{
+    animation: ${animacaoInput} .5s ease-in-out ;
     position: absolute;
     width: 100%;
 height: 700px;
@@ -96,14 +108,15 @@ interface IOpen {
 
 const SearchModalComponent = ({OpenModalSearch}:IOpen)=>{
 
-    const {inputSearchDados,fun, setInputSearchDados} = useSearchProvider()
+    const {inputSearchDados, setInputSearchDados} = useSearchProvider()
 
     const InputHandler = (event: React.ChangeEvent<HTMLInputElement>)=>{
         const data = event.target.value
-        console.log(data);
         setInputSearchDados(data)
-        console.log(inputSearchDados)
     }
+    
+    //Chamada da Api passando o Valor do Input para como params
+    //fazer tratamento de dados e otimizar 
     
     return(
         <SearchModal >

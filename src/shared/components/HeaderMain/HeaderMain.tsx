@@ -24,11 +24,11 @@ const HeaderMain: React.FC<IHeader> = () =>{
                 <div className="header-menu">
                     <ul>
                     <li><Link to='/'>Home</Link></li>
-                    <li><Link className="icon" to='/'>Categorias <img src={Icons.arrow}/></Link></li>
-                    <li><Link className="icon" to='/'>Blog</Link></li>
-                    <li><Link to='/'>LifeStyle</Link></li>
-                    <li><Link to='/'>Contact</Link></li>
-                    <li><Link className="icon" to='/' onClick={OpenModalSearch}><img src={Icons.search} /></Link></li>
+                    <li><Link className="icon" to='/categorias'>Categorias <img src={Icons.arrow}/></Link></li>
+                    <li><Link className="icon" to='/blog'>Blog</Link></li>
+                    <li><Link to='/lifestyles'>LifeStyle</Link></li>
+                    <li><Link to='/contact'>Contact</Link></li>
+                    <li><Link className="icon" to='*' onClick={OpenModalSearch}><img src={Icons.search} /></Link></li>
                     </ul>
                 </div>
                 <div className="icons-sociais">
