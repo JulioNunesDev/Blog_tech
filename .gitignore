@@ -11,8 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
 
+/backend/.env
+/frontend/.env
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,4 +25,6 @@ dist-ssr
 *.sln
 *.sw?
 .env*
-*.env
+*./.env
+**/.env
+**/*.env
