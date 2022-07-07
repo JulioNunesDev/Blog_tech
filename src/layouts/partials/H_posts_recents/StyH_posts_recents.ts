@@ -130,6 +130,7 @@ overflow: hidden;
     height: 30rem;  
     background-color: black;
     justify-content: space-between;
+    padding: 10px 0;
     align-items: center;
    
    
@@ -175,7 +176,8 @@ overflow: hidden;
         background-color: var(--color-fundo);
         align-items: flex-start;
         text-align: left;
-        justify-content: center;
+        justify-content: end;
+        padding-bottom: 10px;
        
 
 
