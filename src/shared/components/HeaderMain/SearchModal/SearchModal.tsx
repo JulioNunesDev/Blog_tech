@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import useSearchProvider from "../../../../contexts/ContextSearchDados"
 
 const SearchModal = styled.div`
 width: 100%;
@@ -95,15 +96,27 @@ interface IOpen {
 
 const SearchModalComponent = ({OpenModalSearch}:IOpen)=>{
 
+    const {inputSearchDados,fun, setInputSearchDados} = useSearchProvider()
+
+    const InputHandler = (event: React.ChangeEvent<HTMLInputElement>)=>{
+        const data = event.target.value
+        console.log(data);
+        setInputSearchDados(data)
+        console.log(inputSearchDados)
+    }
+    
     return(
         <SearchModal >
             <div className="content">
                 <div className="button">
-                    <span onClick={OpenModalSearch}>X</span>
+                    <span
+                     onClick={OpenModalSearch}>X</span>
                 </div>
                 <div className="texts-Input">
-            <input type="text" placeholder="Pesquise aqui" />
+            <input  type="text" placeholder="Pesquise aqui"  value={inputSearchDados}
+                    onChange={InputHandler} />
             <h2>" Press Enter "</h2>
+            <h2>{inputSearchDados}</h2>
             </div>
             </div>
         </SearchModal>
