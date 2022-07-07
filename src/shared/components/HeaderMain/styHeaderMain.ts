@@ -11,6 +11,10 @@ export const Content = styled.header`
     background-color: ${(props: IHeader)=> props.backGround ||  'var(--color-fundo2)'};
     transition: all .2s ease-in-out;
 
+    @media not screen and (min-width: 1024px){
+        height: auto;
+        padding: 15px;
+    }
 `
 export const Ctx_Navegation= styled.nav`
 
@@ -25,6 +29,7 @@ position: relative;
 width: 100%;
 height: 100%;
 display: flex;
+flex-wrap: wrap;
 align-items: center;
 justify-content: space-around;
 
@@ -43,6 +48,7 @@ justify-content: space-around;
         width: 33,33%;
         height: auto;
         display: flex;
+        flex-wrap: wrap;
         ul{
             display: flex;
             align-items: center;
@@ -64,9 +70,6 @@ justify-content: space-around;
             
         }
 
-
-
-
         }
         .icons-sociais{
             width:33,33%;
@@ -84,7 +87,23 @@ justify-content: space-around;
                 transform: translateY(-10px);
             }
         }
-        @media not screen  {
-            
+        @media not screen and (min-width: 1024px) {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            height:100%;
+           
+            .logo{
+                width: auto;
+            }
+            .header-menu{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                
+            }
+            .icons-sociais{
+                width: auto;
+            }
         }
     `
