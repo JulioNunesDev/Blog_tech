@@ -40,7 +40,7 @@ const HeaderMain: React.FC<IHeader> = () =>{
     
     return(
         <>
-        <Content backGround={scrollPosition  !== 0  ? undefined : 'rgba(0,0,0,0.4)'}>
+        <Content backGround={scrollPosition  == 0  ? undefined : 'rgba(0,0,0,0.4)'}>
             <Ctx_Navegation>
                 
                 {openModal ? <SearchModalComponent OpenModalSearch={OpenModalSearch} /> : '' }
@@ -60,10 +60,11 @@ const HeaderMain: React.FC<IHeader> = () =>{
                 </div>
                 <div className="icons-sociais">
                     <ul>
-                        <li><a href="/linkedin"><img src={Icons.linkedin} alt="Linkedin" /></a></li>
-                        <li><a href="/linkedin"><img src={Icons.twitter} alt="Twitter" /></a></li>
-                        <li><a href="/linkedin"><img src={Icons.github} alt="GitHub" /></a></li>
-                        <li><a href="/linkedin"><img src={Icons.instagram} alt="Instagram" /></a></li>
+                        <li><a href="https://www.linkedin.com/in/julionunesdev/" target='_blank'
+                        ><img src={Icons.linkedin} alt="Linkedin" /></a></li>
+                        <li><a href="https://twitter.com/JulioNunes99" target='_blank'><img src={Icons.twitter} alt="Twitter" /></a></li>
+                        <li><a href="https://github.com/JulioNunesDev" target='_blank'><img src={Icons.github} alt="GitHub" /></a></li>
+                        <li><a href="https://www.instagram.com/julionunesyt/" target='_blank'><img src={Icons.instagram} alt="Instagram" /></a></li>
                     </ul>
                 </div>
             </Ctx_Navegation>

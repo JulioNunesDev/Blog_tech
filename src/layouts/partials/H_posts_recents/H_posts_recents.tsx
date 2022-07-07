@@ -5,10 +5,6 @@ import Moment from "react-moment"
 import moment from "moment"
 
 
-
-
-// 2018-04-01 19:00:00
-
 const H_Posts_Recents = () =>{
     const [dados, setDados] = useState<any | null>(null)
 
@@ -66,7 +62,7 @@ const H_Posts_Recents = () =>{
             <a href={dados?.[2].url} target="_blank">
             <div className="posts">
             <div className="post_title imgTwo">
-                    <h1>{dados?.[2].title.substring(0, 75)+'...'}</h1>
+                    <h1>{dados?.[4].title.substring(0, 75)+'...'}</h1>
                     <span className="post_infors">
                         <img src={dados?.[2].urlToImage} />
                         <p>{dados?.[2].author?.substring()+''} • </p>
