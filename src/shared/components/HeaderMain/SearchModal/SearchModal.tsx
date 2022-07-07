@@ -117,6 +117,7 @@ const SearchModalComponent = ({OpenModalSearch}:IOpen)=>{
     
     //Chamada da Api passando o Valor do Input para como params
     //fazer tratamento de dados e otimizar 
+    // lenght caracteres max 
     
     return(
         <SearchModal >
@@ -126,7 +127,7 @@ const SearchModalComponent = ({OpenModalSearch}:IOpen)=>{
                      onClick={OpenModalSearch}>X</span>
                 </div>
                 <div className="texts-Input">
-            <input  type="text" placeholder="Pesquise aqui"  value={inputSearchDados}
+            <input autoFocus  type="text" placeholder="Pesquise aqui"  value={inputSearchDados}
                     onChange={InputHandler} />
             <h2>" Press Enter "</h2>
             <h2>{inputSearchDados}</h2>

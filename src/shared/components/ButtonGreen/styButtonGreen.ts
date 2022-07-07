@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import IProps from './interfaces'
-import IPadProps from './interfaces'
+import IProps from '../interfaces/interfaces'
+import IPadProps from '../interfaces/interfaces'
 
 export const Content = styled.div`
     display: flex;
