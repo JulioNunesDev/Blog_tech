@@ -2,12 +2,15 @@ import styled from "styled-components";
 import IHeader from '../interfaces/interfaces'
 
 export const Content = styled.header`
-    position: relative;
+    position: sticky;
+    top: 0;
     display: flex;
     width: 100%;
     height: 75px;
     justify-content: ${(props: IHeader) => props.position || undefined};
-    background-color: var(--color-fundo2);
+    background-color: ${(props: IHeader)=> props.backGround ||  'var(--color-fundo2)'};
+    transition: all .2s ease-in-out;
+
 `
 export const Ctx_Navegation= styled.nav`
 
@@ -80,5 +83,8 @@ justify-content: space-around;
             img:hover{
                 transform: translateY(-10px);
             }
+        }
+        @media not screen  {
+            
         }
     `
