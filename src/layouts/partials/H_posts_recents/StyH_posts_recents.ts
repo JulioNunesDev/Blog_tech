@@ -15,7 +15,7 @@ export const Base_Posts_Recents = styled.section`
 width: 100%;
 height: auto;
 
-background-image: url(${(props:IProp)=>props.postCapa || 'cc'});
+background-image: url(${(props:IProp)=>props.postCapa || '../../../assets/erro.jpg'});
 display: flex;
 justify-content: center;
 align-items: center;
@@ -48,7 +48,7 @@ a{
 
 
 .post_recents_main{
-background-image: url(${(props:IProps)=>props.test || '../../../assets/erro/erro.jpg'});
+background-image: url(${(props:IProps)=>props.test || 'x'});
 background-position: center;
 
 background-size: 180%;

@@ -69,7 +69,7 @@ const H_Posts_Recents = () =>{
                  <div className="post_title imgOne">
                     <h1>{dados?.[1].title.length > 45 ? dados?.[1].title.substring(0, 50)+'...' : ''}</h1>
                     <span className="post_infors">
-                        <img src={dados?.[1].urlToImage} alt="" />
+                        <img src={dados?.[1].urlToImage}  />
                         <p>{dados?.[1].author} • </p>
                         <span className="post_infors_date"><p>{dataPublicao}</p></span>
                     </span>
