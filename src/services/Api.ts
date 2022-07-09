@@ -5,3 +5,5 @@ import axios from "axios";
 })
 
 export default api
+
+//Criar algumas rotas para as categorias
