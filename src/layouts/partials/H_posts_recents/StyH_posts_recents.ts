@@ -4,24 +4,18 @@ interface IProps {
     test: string
     posts: string
     postsTwo: string
-}
-
-const animaImg = keyframes`
-from{
-background-position: center;
-background-color: blanchedalmond;
-background-size: cover;
-background-repeat: no-repeat;
-}
-to{
 
 }
-`
+interface IProp {
+    postCapa: string
+}
+
 
 export const Base_Posts_Recents = styled.section`
 width: 100%;
 height: auto;
-background-color: var(--color-fundo2);
+
+background-image: url(${(props:IProp)=>props.postCapa || 'cc'});
 display: flex;
 justify-content: center;
 align-items: center;
@@ -54,7 +48,7 @@ a{
 
 
 .post_recents_main{
-background-image: url(${(props:IProps)=>props.test || 'teste'});
+background-image: url(${(props:IProps)=>props.test || '../../../assets/erro/erro.jpg'});
 background-position: center;
 
 background-size: 180%;
@@ -73,7 +67,7 @@ overflow: hidden;
     background-position: center;
     background-size: 200%;
     background-repeat: no-repeat;
-    background-image: url(${(props:IProps)=>props.test || 'teste'});
+    background-image: url(${(props:IProps)=>props.test || '../../../assets/erro/erro.jpg'});
 }
 
     .post_title{
@@ -128,10 +122,10 @@ overflow: hidden;
     flex-direction: column;
     width: 30rem;
     height: 30rem;  
-    background-color: black;
     justify-content: space-between;
     padding: 10px 0;
     align-items: center;
+ 
    
    
     .imgOne{
@@ -139,7 +133,8 @@ overflow: hidden;
         height: 14rem;
        background-size: 100%;
        background-position: center;
-       background-image: url(${(props:IProps)=>props.posts || 'teste'});
+      
+       background-image: url(${(props:IProps)=>props.posts || '../../../assets/erro/erro.jpg'});
     
 
         &:hover{
@@ -147,12 +142,12 @@ overflow: hidden;
     background-position: center;
     background-size: 120%;
     background-repeat: no-repeat;
-    background-image: url(${(props:IProps)=>props.posts || 'teste'});
+    background-image: url(${(props:IProps)=>props.posts || '../../../assets/erro/erro.jpg'});
         }
     }
 
     .imgTwo{
-        background-image: url(${(props:IProps)=>props.postsTwo || 'teste'});
+        background-image: url(${(props:IProps)=>props.postsTwo || '../../../assets/erro/erro.jpg'});
         width: 100%;
         height: 14rem;
         background-size: 100%;
@@ -164,7 +159,7 @@ overflow: hidden;
     background-position: center;
     background-size: 120%;
     background-repeat: no-repeat;
-    background-image: url(${(props:IProps)=>props.postsTwo || 'teste'});
+    background-image: url(${(props:IProps)=>props.postsTwo || '../../../assets/erro/erro.jpg'});
         }
     }
     .post_title{
