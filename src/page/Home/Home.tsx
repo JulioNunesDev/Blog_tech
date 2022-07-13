@@ -6,7 +6,7 @@ import { Content_Home } from "./StyHome"
 const Home = ( ) =>{
     return(
         <Content_Home>
-        
+            <H_Posts_Recents />
             <H_first_posts />
         </Content_Home>
     )

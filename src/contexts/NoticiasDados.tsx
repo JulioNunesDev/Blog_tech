@@ -1,9 +1,9 @@
-import {createContext, ReactNode, SetStateAction, useEffect, useState}  from 'react'
+import {createContext, ReactNode, SetStateAction, useContext, useEffect, useState}  from 'react'
 import api from '../services/Api';
 
 type NoticiasTopLine = {
-    noticiasTopLine: string;
-    setNoticiasTopLine: React.Dispatch<SetStateAction<string>>
+    noticiasTopLine: any;
+    setNoticiasTopLine: React.Dispatch<SetStateAction<any>>
    
 }
 
@@ -11,27 +11,30 @@ type  Children = {
     children: ReactNode
 }
 
-const initializador = {
-    noticiasTopLine: '',
-    setNoticiasTopLine: ()=>{}
-}
-export const NoticiasTopLine = createContext<NoticiasTopLine>({} as NoticiasTopLine)
+
+export const NewsTopLine = createContext({} as NoticiasTopLine)
 
 
 export default function NoticiasProvider({children}: Children){
-    const [noticiasTopLine, setNoticiasTopLine] = useState(initializador)
+    const [noticiasTopLine, setNoticiasTopLine] = useState<any>([])
 
     useEffect(()=>{
-        api.get('').then((res)=>{
-            const data = res.data
-            setNoticiasTopLine(data)
+        api.get('').then((response)=>{
+            
+            setNoticiasTopLine(response.data.articles)
+           
         }).catch((err)=>console.log('Erro na requisição: ', err))
         
     },[])
 
     return(
-        <NoticiasTopLine.Provider value={noticiasTopLine}>
+        <NewsTopLine.Provider value={noticiasTopLine}>
             {children}
-        </NoticiasTopLine.Provider>
+        </NewsTopLine.Provider>
     )
+}
+
+export const useNoticiasTopLines = ()=>{
+    const context = useContext(NewsTopLine)
+    return context
 }

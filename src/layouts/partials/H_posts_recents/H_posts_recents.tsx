@@ -16,9 +16,7 @@ const H_Posts_Recents = () =>{
             await api.get('')
             .then((response)=>{
               setDados(response.data.articles)
-                console.log(response.data.articles);
-                
-                
+  
             })
             .catch((err)=>{
                 console.log('Erro na requisicao: ', err);
