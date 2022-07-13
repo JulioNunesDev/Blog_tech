@@ -16,10 +16,10 @@ export default function H_first_posts (){
            console.log(noticiasTopLine);
         }).catch((err)=>console.log('Erro na requisição: ', err))
        
-
-      
+        
         
     },[])
+  
     
     return(
       <Base_first_posts>
@@ -37,36 +37,21 @@ export default function H_first_posts (){
             </div>
         </Base_p_top>
         <Base_p_inf>
-        <div className="content_destaques">
+          <div className="content_destaques">
+
             <div className="img_content">
-            <img src={''}/>
+            <img src={noticiasTopLine?.[7].urlToImage}/>
             </div>
             <div className="content_headers">
-            <h2>sobre tecnologia</h2>
-            <p>it is teste etxt meani sobre swdvf</p>
+            <h2>{noticiasTopLine?.[7].title.length > 25 ? noticiasTopLine?.[7].title.substring(0, 60)+'...' : '' }</h2>
+            <p>{noticiasTopLine?.[7].content.length > 100 ? noticiasTopLine?.[7].content.substring(0, 100)+'...' : '' }</p>
             <span className="inf_titles_footer">
-                <span>Data</span>
-                <span>Read more</span>
+            <span>{moment(noticiasTopLine?.[7].publishedAt).format('[Hoje às ] h:mm a' )}</span>
+            <span><a href={noticiasTopLine?.[7].url}>Read more</a></span>
             </span>
             </div>
-           
-        </div><div className="content_destaques">
-            <img src=""/>
-            <h2>sobre tecnologia</h2>
-            <p>it is teste etxt meani sobre swdvf</p>
-            <span className="inf_titles_footer">
-                <span>Data</span>
-                <span>Read more</span>
-            </span>
-        </div><div className="content_destaques">
-            <img src=""/>
-            <h2>sobre tecnologia</h2>
-            <p>it is teste etxt meani sobre swdvf</p>
-            <span className="inf_titles_footer">
-                <span>Data</span>
-                <span>Read more</span>
-            </span>
         </div>
+     
         </Base_p_inf>
       </Base_first_posts>
     )
